@@ -15,9 +15,8 @@ interface NavItem {
 const navItems: NavItem[] = [
   {
     label: "Home",
-    href: "#",
+    href: "/",
     icon: (
-      // Minimal house - single line aesthetic
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M3 10.5L12 3l9 7.5" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9" strokeLinecap="round" />
@@ -28,9 +27,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "Works",
-    href: "#projects",
+    href: "/work",
     icon: (
-      // Minimal grid/portfolio
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <rect x="3" y="3" width="7" height="7" rx="1" />
         <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -42,9 +40,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "About",
-    href: "#about",
+    href: "/about",
     icon: (
-      // Minimal person silhouette
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <circle cx="12" cy="7" r="4" />
         <path d="M5.5 21a6.5 6.5 0 0113 0" strokeLinecap="round" />
@@ -54,9 +51,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "Skills",
-    href: "#skills",
+    href: "/skills",
     icon: (
-      // Minimal sparkle/star
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M12 2v4m0 12v4m10-10h-4M6 12H2" strokeLinecap="round" />
         <path d="M17.5 6.5l-2.8 2.8m-5.4 5.4l-2.8 2.8m0-11l2.8 2.8m5.4 5.4l2.8 2.8" strokeLinecap="round" />
@@ -67,9 +63,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "Journey",
-    href: "#experience",
+    href: "/journey",
     icon: (
-      // Minimal winding path
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M4 4c4 0 4 8 8 8s4-8 8-8" strokeLinecap="round" />
         <path d="M4 12c4 0 4 8 8 8s4-8 8-8" strokeLinecap="round" />
@@ -81,9 +76,8 @@ const navItems: NavItem[] = [
   },
   {
     label: "Contact",
-    href: "#contact",
+    href: "/contact",
     icon: (
-      // Minimal envelope with heart
       <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <rect x="3" y="5" width="18" height="14" rx="2" />
         <path d="M3 7l9 6 9-6" strokeLinecap="round" strokeLinejoin="round" />
@@ -94,7 +88,7 @@ const navItems: NavItem[] = [
   },
 ];
 
-// Animation variants for the full-page overlay
+// Overlay - waits for children to exit first, then slides out
 const overlayVariants: Variants = {
   hidden: {
     y: "-100%",
@@ -111,13 +105,14 @@ const overlayVariants: Variants = {
     y: "100%",
     transition: {
       type: "tween",
-      duration: 0.5,
+      duration: 0.6,
       ease: [0.22, 1, 0.36, 1],
+      delay: 0.4, // Wait for cards to exit first
     },
   },
 };
 
-// Animation variants for the content container
+// Content container - orchestrates children with stagger
 const contentVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -125,58 +120,58 @@ const contentVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.3,
-      staggerChildren: 0.08,
-      delayChildren: 0.4,
+      delay: 0.2,
+      staggerChildren: 0.06,
+      delayChildren: 0.3,
     },
   },
   exit: {
-    opacity: 0,
+    opacity: 1, // Keep opacity for visible exit
     transition: {
-      duration: 0.2,
-      staggerChildren: 0.04,
-      staggerDirection: -1,
+      staggerChildren: 0.05,
+      staggerDirection: -1, // Reverse order
     },
   },
 };
 
-// Animation variants for nav items
+// Nav items - scale from center with blur effect (not translateY)
 const itemVariants: Variants = {
   hidden: {
     opacity: 0,
-    y: 40,
-    scale: 0.95,
+    scale: 0.8,
+    filter: "blur(10px)",
   },
   visible: {
     opacity: 1,
-    y: 0,
     scale: 1,
+    filter: "blur(0px)",
     transition: {
       type: "spring",
-      stiffness: 300,
-      damping: 24,
+      stiffness: 200,
+      damping: 20,
+      mass: 0.8,
     },
   },
   exit: {
     opacity: 0,
-    y: -20,
-    scale: 0.95,
+    scale: 0.9,
+    filter: "blur(8px)",
     transition: {
       type: "tween",
-      duration: 0.15,
-      ease: "easeIn",
+      duration: 0.25,
+      ease: [0.4, 0, 1, 1],
     },
   },
 };
 
-// Header animation variants
+// Header - fades in from above
 const headerVariants: Variants = {
-  hidden: { opacity: 0, y: -30 },
+  hidden: { opacity: 0, y: -20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.3,
+      delay: 0.25,
       type: "spring",
       stiffness: 300,
       damping: 24,
@@ -184,9 +179,9 @@ const headerVariants: Variants = {
   },
   exit: {
     opacity: 0,
-    y: -20,
+    y: -10,
     transition: {
-      duration: 0.15,
+      duration: 0.2,
     },
   },
 };
@@ -196,12 +191,12 @@ export function Navigation() {
 
   return (
     <>
-      {/* Hamburger Button - Minimal aesthetic */}
+      {/* Hamburger Button */}
       <Button
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(true)}
-        className="relative z-50 text-muted-foreground hover:text-foreground"
+        className="relative z-50 text-muted-foreground hover:text-foreground border rounded-full"
         aria-label="Open navigation menu"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
@@ -230,7 +225,6 @@ export function Navigation() {
               exit="exit"
               className="shrink-0 flex items-center justify-between p-6 md:p-8 border-b border-white/5"
             >
-              {/* Search / Title */}
               <div className="flex items-center gap-4 text-white/40">
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
                   <circle cx="11" cy="11" r="7" />
@@ -239,7 +233,6 @@ export function Navigation() {
                 <span className="text-lg font-light tracking-widest font-heading">NAVIGATE</span>
               </div>
 
-              {/* Close Button */}
               <motion.button
                 onClick={() => setIsOpen(false)}
                 className="p-2 text-white/40 hover:text-white transition-colors"
@@ -254,7 +247,7 @@ export function Navigation() {
               </motion.button>
             </motion.header>
 
-            {/* Navigation Grid - Full Width/Height */}
+            {/* Navigation Grid */}
             <motion.div
               variants={contentVariants}
               initial="hidden"
@@ -262,38 +255,81 @@ export function Navigation() {
               exit="exit"
               className="flex-1 p-4 md:p-8 overflow-hidden"
             >
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 h-full">
-                {navItems.map((item) => (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 h-full perspective-1000">
+                {navItems.map((item, index) => (
                   <motion.a
                     key={item.label}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     variants={itemVariants}
                     whileHover={{
-                      scale: 1.02,
-                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      scale: 1.04,
+                      rotateX: -5,
+                      rotateY: index % 3 === 0 ? 5 : index % 3 === 2 ? -5 : 0,
+                      z: 50,
+                      boxShadow: "0 25px 50px -12px rgba(255, 255, 255, 0.1)",
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 25,
+                      },
                     }}
-                    whileTap={{ scale: 0.98 }}
-                    className="group flex flex-col items-center justify-center gap-4 md:gap-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm transition-all duration-300"
+                    whileTap={{
+                      scale: 0.98,
+                      rotateX: 0,
+                      rotateY: 0,
+                    }}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transformOrigin: "center center",
+                    }}
+                    className="group relative flex flex-col items-center justify-center gap-4 md:gap-6 rounded-2xl bg-white/[0.02] border border-white/5 backdrop-blur-sm transition-colors duration-500"
                   >
-                    {/* Icon */}
+                    {/* Gradient glow on hover */}
                     <motion.div
-                      className="text-white/30 group-hover:text-white/80 transition-colors duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background: "radial-gradient(circle at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 60%)",
+                      }}
+                    />
+
+                    {/* Icon with 3D lift effect */}
+                    <motion.div
+                      className="text-white/30 group-hover:text-white/90 transition-colors duration-500"
+                      style={{ transform: "translateZ(20px)" }}
+                      whileHover={{
+                        scale: 1.15,
+                        transition: { type: "spring", stiffness: 500, damping: 15 }
+                      }}
                     >
                       {item.icon}
                     </motion.div>
 
                     {/* Label */}
-                    <span className="text-sm md:text-base font-medium tracking-wider text-white/70 group-hover:text-white transition-colors duration-300 font-heading">
+                    <span
+                      className="text-sm md:text-base font-medium tracking-wider text-white/60 group-hover:text-white transition-colors duration-500 font-heading"
+                      style={{ transform: "translateZ(15px)" }}
+                    >
                       {item.label}
                     </span>
 
-                    {/* Description - Japanese text for aesthetic */}
-                    <span className="text-[10px] md:text-xs text-white/20 group-hover:text-white/40 transition-colors duration-300 tracking-widest font-serif">
+                    {/* Japanese description */}
+                    <span
+                      className="text-[10px] md:text-xs text-white/15 group-hover:text-white/50 transition-colors duration-500 tracking-widest font-serif"
+                      style={{ transform: "translateZ(10px)" }}
+                    >
                       {item.description}
                     </span>
+
+                    {/* Bottom highlight line on hover */}
+                    <motion.div
+                      className="absolute bottom-0 left-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                      initial={{ width: 0, x: "-50%" }}
+                      whileHover={{
+                        width: "80%",
+                        transition: { duration: 0.4, ease: "easeOut" }
+                      }}
+                    />
                   </motion.a>
                 ))}
               </div>
