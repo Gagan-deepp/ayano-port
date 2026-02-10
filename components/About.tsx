@@ -17,7 +17,7 @@ const About = () => {
     return (
         <section
             ref={containerRef}
-            className="min-h-screen py-24 md:py-32 flex items-center justify-center relative overflow-hidden bg-[#1a1a1a]"
+            className="min-h-screen py-24 md:py-32 mt-24 flex items-center justify-center relative overflow-hidden bg-[#1a1a1a]"
             id="about"
         >
             <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">

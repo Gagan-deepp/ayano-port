@@ -10,7 +10,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="absolute top-8 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-300 hover:scale-[1.01] cursor-default"
+                className="absolute top-8 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
                     {/* Code/Terminal Icon */}
@@ -35,7 +35,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
-                className="absolute top-1/2 left-8 md:left-12 -translate-y-1/2 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-300 hover:scale-[1.01] cursor-default"
+                className="absolute top-[40%] left-8 md:left-12 -translate-y-1/2 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
                     {/* Brain/Network Icon */}
@@ -67,7 +67,7 @@ const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.6 }}
-                className="absolute bottom-24 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-300 hover:scale-[1.01] cursor-default"
+                className="absolute bottom-24 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
                     {/* Heart/Sparkle Icon */}
@@ -82,6 +82,31 @@ const Hero = () => {
                     </span>
                     <span className="text-[11px] font-sans text-white/60 tracking-wide hover:text-white/90 transition-colors">
                         Clean code & Minimalist design
+                    </span>
+                </div>
+            </motion.div>
+
+            {/* Pill 4: SEEKING - Bottom Left */}
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 1.8 }}
+                className="absolute bottom-16 left-16 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-300 hover:scale-[1.01] cursor-default"
+            >
+                <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
+                    {/* Focus/Target Icon */}
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
+                        <circle cx="12" cy="12" r="9" />
+                        <circle cx="12" cy="12" r="2" />
+                    </svg>
+                </div>
+
+                <div className="flex flex-col">
+                    <span className="text-[9px] tracking-[0.2em] text-white/30 uppercase font-heading">
+                        Seeking
+                    </span>
+                    <span className="text-[11px] font-sans text-white/60 tracking-wide hover:text-white/90 transition-colors">
+                        Logic & First Principles
                     </span>
                 </div>
             </motion.div>

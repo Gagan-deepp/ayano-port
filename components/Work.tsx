@@ -4,16 +4,18 @@ import { motion } from "framer-motion";
 
 const projects = [
     {
-        name: "E-Commerce",
-        type: "Next.js + Stripe",
+        name: "Pankhuri",
+        type: "Next.js + Docker + GCP",
+        slug: "pankhuri",
         index: "01",
-        description: "A minimal digital marketplace ensuring smooth transactions.",
+        description: "Pankhuri is a women-centric social commerce platform that empowers resellers to build their own online businesses.",
         github: "#",
         live: "#",
     },
     {
         name: "Learn Space",
-        type: "Next.js + MongoDB",
+        slug: "learn-space",
+        type: "Next.js + GenAI",
         index: "02",
         description: "Learn Space is revolutionizing education through AI-powered personalization and community collaboration.",
         github: "#",
@@ -21,6 +23,7 @@ const projects = [
     },
     {
         name: "Portfolio V1",
+        slug: "portfolio-v1",
         type: "React + Framer Motion",
         index: "03",
         description: "My previous portfolio website.",
@@ -29,6 +32,7 @@ const projects = [
     },
     {
         name: "AI SaaS",
+        slug: "ai-saas",
         type: "Python + OpenAI",
         index: "04",
         description: "Generative AI platform for content creators.",
@@ -76,8 +80,7 @@ const Work = () => {
                     {projects.map((project, idx) => (
                         <motion.a
                             key={project.index}
-                            href={project.live}
-                            target="_blank"
+                            href={`/work/${project.slug}`}
                             rel="noopener noreferrer"
                             initial="initial"
                             whileInView="animate"

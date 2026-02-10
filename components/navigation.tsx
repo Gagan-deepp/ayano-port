@@ -23,7 +23,7 @@ const navItems: NavItem[] = [
         <circle cx="12" cy="14" r="2" strokeWidth={0.5} />
       </svg>
     ),
-    description: "始まり",
+    description: "시작",
   },
   {
     label: "Works",
@@ -36,7 +36,7 @@ const navItems: NavItem[] = [
         <rect x="14" y="14" width="7" height="7" rx="1" />
       </svg>
     ),
-    description: "作品集",
+    description: "작품",
   },
   {
     label: "About",
@@ -47,7 +47,7 @@ const navItems: NavItem[] = [
         <path d="M5.5 21a6.5 6.5 0 0113 0" strokeLinecap="round" />
       </svg>
     ),
-    description: "私について",
+    description: "소개",
   },
   {
     label: "Skills",
@@ -59,7 +59,7 @@ const navItems: NavItem[] = [
         <circle cx="12" cy="12" r="2" strokeWidth={0.5} />
       </svg>
     ),
-    description: "技術",
+    description: "기술",
   },
   {
     label: "Journey",
@@ -72,7 +72,7 @@ const navItems: NavItem[] = [
         <circle cx="20" cy="20" r="1.5" fill="currentColor" opacity="0.3" />
       </svg>
     ),
-    description: "経験",
+    description: "여정",
   },
   {
     label: "Contact",
@@ -84,7 +84,7 @@ const navItems: NavItem[] = [
         <path d="M12 18l-2-2 2-2 2 2-2 2z" fill="currentColor" opacity="0.2" />
       </svg>
     ),
-    description: "連絡",
+    description: "연락",
   },
 ];
 

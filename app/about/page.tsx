@@ -101,11 +101,10 @@ const AboutPage = () => {
                                         initial={{ scale: 1.2, opacity: 0 }}
                                         whileInView={{ scale: 1, opacity: 1 }}
                                         transition={{ duration: 1.5, ease: [0.33, 1, 0.68, 1] }}
-                                        viewport={{ once: true }}
                                         className="absolute inset-0"
                                     >
                                         <Image
-                                            src="/abt.png"
+                                            src="/abt_02.png"
                                             alt="Portrait"
                                             fill
                                             className="object-cover grayscale opacity-60 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-80"
@@ -245,7 +244,6 @@ const AboutPage = () => {
                                 <motion.div
                                     initial="hidden"
                                     whileInView="visible"
-                                    viewport={{ once: true }}
                                     className="space-y-6"
                                 >
                                     <h2 className="text-5xl md:text-7xl font-heading font-bold text-white/90 uppercase tracking-tighter leading-tight">
@@ -259,7 +257,6 @@ const AboutPage = () => {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 1 }}
-                                        viewport={{ once: true }}
                                     >
                                         I don't just design interfaces; I direct digital narratives. My approach focuses on the intersection of brand story and technical performance.
                                     </motion.p>
@@ -268,7 +265,6 @@ const AboutPage = () => {
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 1, delay: 0.2 }}
-                                        viewport={{ once: true }}
                                     >
                                         Whether it's a minimal portfolio or a complex platform, I aim to create a feeling of effortless motion and silent power—where every interaction feels heavy with meaning yet light in execution.
                                     </motion.p>
@@ -278,7 +274,6 @@ const AboutPage = () => {
                                             initial={{ scaleX: 0 }}
                                             whileInView={{ scaleX: 1 }}
                                             transition={{ duration: 1.5, ease: "circOut" }}
-                                            viewport={{ once: true }}
                                             className="h-px w-full bg-white/10 origin-left"
                                         />
                                         <div className="mt-4 flex justify-between text-[10px] uppercase tracking-[0.4em] text-white/20 font-heading">
@@ -292,10 +287,9 @@ const AboutPage = () => {
                             {/* Right: Immersive Image with Mask Reveal */}
                             <div className="lg:col-span-6">
                                 <motion.div
-                                    initial={{ clipPath: "inset(0% 100% 0% 0%)" }}
-                                    whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                                    transition={{ duration: 1.5, ease: [0.77, 0, 0.175, 1] }}
-                                    viewport={{ once: true }}
+                                    initial={{ scale: 1.2, opacity: 0 }}
+                                    whileInView={{ scale: 1, opacity: 1 }}
+                                    transition={{ duration: 1.4, ease: [0.33, 1, 0.68, 1] }}
                                     className="relative aspect-square rounded-3xl overflow-hidden bg-white/5 border border-white/5 group"
                                 >
                                     <Image
