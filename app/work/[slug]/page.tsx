@@ -161,25 +161,45 @@ const WorkDetail = () => {
                         </div>
                     </div>
 
-                    {/* 4. Image Gallery */}
-                    <div className="space-y-12">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                            {project.images.map((img, idx) => (
-                                <motion.div
+                    {/* 4. Asymmetrical Editorial Gallery */}
+                    <div className="space-y-8">
+                        {/* First Image - Full Width (Cinematic) */}
+                        {project.images[0] && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
+                                viewport={{ once: true, margin: "-10%" }}
+                                className="relative aspect-video rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
+                            >
+                                <Image
+                                    src={project.images[0]}
+                                    alt={`${project.name} main preview`}
+                                    fill
+                                    className="object-cover grayscale opacity-60 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
+                                />
+                                <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/20 to-transparent pointer-events-none" />
+                            </motion.div>
+                        )}
+
+                        {/* Second & Third Images - Side by Side (Square) */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {project.images.slice(1, 3).map((img, idx) => (
+                                <motion.div 
                                     key={idx}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 1, delay: idx * 0.2, ease: [0.33, 1, 0.68, 1] }}
+                                    initial={{ opacity: 0, y: 40 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1.2, delay: 0.2 + (idx * 0.1), ease: [0.33, 1, 0.68, 1] }}
                                     viewport={{ once: true, margin: "-10%" }}
-                                    className="relative aspect-4/5 rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
+                                    className="relative aspect-square rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
                                 >
                                     <Image
-                                        src={img}
-                                        alt={`${project.name} preview ${idx + 1}`}
-                                        fill
-                                        className="object-cover grayscale opacity-60 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
+                                        src={img} 
+                                        alt={`${project.name} detail ${idx + 1}`}
+                                        fill 
+                                        className="object-cover grayscale opacity-60 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
                                     />
-                                    <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/40 to-transparent pointer-events-none" />
+                                    <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/20 to-transparent pointer-events-none" />
                                 </motion.div>
                             ))}
                         </div>

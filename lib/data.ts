@@ -27,9 +27,9 @@ export const projects: Project[] = [
         realm: "E-Commerce",
         essence: "Empowering, Community-driven, Scalable — micro-entrepreneurship at scale.",
         images: [
-            "/abt_02.png",
-            "/abt_02.png",
-            "/abt_02.png"
+            "/works/pankhuri/mock_1.svg",
+            "/works/pankhuri/mock_phonee.png",
+            "/works/pankhuri/mock_2.svg",
         ],
         github: "#",
         live: "#",
@@ -46,9 +46,9 @@ export const projects: Project[] = [
         realm: "Education",
         essence: "Adaptive, Collaborative, Intelligent — the future of self-paced learning.",
         images: [
-            "/abt_02.png",
-            "/abt_02.png",
-            "/abt_02.png"
+            "/works/learn_space/mock_1.svg",
+            "/works/learn_space/mock_2.svg",
+            "/works/learn_space/mock_3.svg",
         ],
         github: "#",
         live: "https://learn-space-chi.vercel.app/",
@@ -65,9 +65,9 @@ export const projects: Project[] = [
         realm: "Design",
         essence: "Experimental, Bold, Kinetic — testing the boundaries of web motion.",
         images: [
-            "/abt_02.png",
-            "/abt_02.png",
-            "/abt_02.png"
+            "/works/portfolio_v1/mock_1.svg",
+            "/works/portfolio_v1/mock_phonee.png",
+            "/works/portfolio_v1/mock_2.svg"
         ],
         github: "#",
         live: "https://ayano-nu.vercel.app/",
