@@ -3,6 +3,7 @@ import { Outfit, Space_Grotesk, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import Analytics from "@/components/Analytics/google-analytics";
 
 // Primary font - Clean, modern, slightly warm
 const outfit = Outfit({
@@ -47,6 +48,8 @@ export default function RootLayout({
           <Footer />
         </div>
       </body>
+
+      <Analytics />
     </html>
   );
 }
