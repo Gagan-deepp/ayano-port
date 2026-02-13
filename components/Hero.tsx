@@ -1,19 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
+// Defined shared variants for a more "Korean Minimalist" feel
+const pillVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 10,
+        scale: 0.95,
+        filter: "blur(8px)"
+    },
+    visible: (custom: number) => ({
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        transition: {
+            duration: 1.2,
+            delay: 1.2 + (custom * 0.15),
+            ease: [0.22, 1, 0.36, 1] // Premium smooth ease
+        }
+    })
+};
 
 const Hero = () => {
     return (
         <section className="flex-1 flex flex-col min-h-[calc(100vh-8rem)] relative overflow-hidden">
             {/* Pill 1: CURRENTLY - Top Right */}
             <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
+                custom={0}
+                initial="hidden"
+                animate="visible"
+                variants={pillVariants}
                 className="absolute top-8 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
-                    {/* Code/Terminal Icon */}
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
                         <polyline points="16 18 22 12 16 6" />
                         <polyline points="8 6 2 12 8 18" />
@@ -32,13 +53,13 @@ const Hero = () => {
 
             {/* Pill 2: EXPLORING - Mid Left */}
             <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.4 }}
+                custom={1}
+                initial="hidden"
+                animate="visible"
+                variants={pillVariants}
                 className="absolute top-[40%] left-8 md:left-12 -translate-y-1/2 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
-                    {/* Brain/Network Icon */}
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
                         <circle cx="12" cy="12" r="3" />
                         <path d="M19.07 4.93L17.07 6.93" />
@@ -62,15 +83,15 @@ const Hero = () => {
                 </div>
             </motion.div>
 
-            {/* Pill 3: VALUING - Bottom Right (above footer) */}
+            {/* Pill 3: VALUING - Bottom Right */}
             <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.6 }}
+                custom={2}
+                initial="hidden"
+                animate="visible"
+                variants={pillVariants}
                 className="absolute bottom-24 right-8 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
-                    {/* Heart/Sparkle Icon */}
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                     </svg>
@@ -88,13 +109,13 @@ const Hero = () => {
 
             {/* Pill 4: SEEKING - Bottom Left */}
             <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.8 }}
-                className="absolute bottom-16 left-16 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm hover:bg-white/[0.05] transition-all duration-300 hover:scale-[1.01] cursor-default"
+                custom={3}
+                initial="hidden"
+                animate="visible"
+                variants={pillVariants}
+                className="absolute bottom-16 left-16 z-20 hidden md:flex items-center gap-3 px-4 py-2 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm hover:bg-white/5 transition-all duration-300 hover:scale-[1.01] cursor-default"
             >
                 <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white/50 hover:text-white/80 transition-colors">
-                    {/* Focus/Target Icon */}
                     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
                         <circle cx="12" cy="12" r="9" />
                         <circle cx="12" cy="12" r="2" />
@@ -205,12 +226,12 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 1.6 }}
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
                 >
-                    <span className="text-[9px] tracking-[0.3em] text-white/10 uppercase font-heading group-hover:text-white/30 transition-colors">Scroll</span>
+                    <span className="text-[9px] tracking-[0.3em] text-white/20 uppercase font-heading group-hover:text-white/30 transition-colors">Scroll</span>
                     <motion.div
                         animate={{ y: [0, 6, 0] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <div className="w-[1px] h-8 bg-gradient-to-b from-white/10 to-transparent"></div>
+                        <div className="w-px h-8 bg-linear-to-b from-white/20 to-transparent"></div>
                     </motion.div>
                 </motion.div>
 

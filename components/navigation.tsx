@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -188,23 +188,52 @@ const headerVariants: Variants = {
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll to animate/fix the button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      {/* Hamburger Button */}
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={() => setIsOpen(true)}
-        className="relative z-50 text-muted-foreground hover:text-foreground border rounded-full"
-        aria-label="Open navigation menu"
-      >
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
-          <line x1="4" y1="7" x2="20" y2="7" strokeLinecap="round" />
-          <line x1="4" y1="12" x2="16" y2="12" strokeLinecap="round" />
-          <line x1="4" y1="17" x2="12" y2="17" strokeLinecap="round" />
-        </svg>
-      </Button>
+      {/* Hamburger Button - Fixed and Animated */}
+      <div className="fixed top-0 right-0 z-50 p-6 md:p-8 pointer-events-none">
+        <motion.div
+          initial={false}
+          animate={{
+            scale: scrolled ? 1.05 : 1,
+            backgroundColor: scrolled ? "rgba(255, 255, 255, 0.05)" : "rgba(255, 255, 255, 0)",
+            backdropFilter: scrolled ? "blur(16px)" : "blur(0px)",
+            borderColor: scrolled ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0)",
+          }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-auto rounded-full border shadow-2xl overflow-hidden"
+        >
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsOpen(true)}
+            className="w-12 h-12 text-muted-foreground hover:text-foreground border-none rounded-full"
+            aria-label="Open navigation menu"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1}>
+              <line x1="4" y1="7" x2="20" y2="7" strokeLinecap="round" />
+              <line x1="4" y1="12" x2="16" y2="12" strokeLinecap="round" />
+              <line x1="4" y1="17" x2="12" y2="17" strokeLinecap="round" />
+            </svg>
+          </Button>
+        </motion.div>
+      </div>
 
       {/* Full Page Navigation Overlay */}
       <AnimatePresence mode="wait">

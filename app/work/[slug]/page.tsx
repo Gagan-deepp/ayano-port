@@ -6,6 +6,7 @@ import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 // Animation Variants
 const revealVariants: Variants = {
@@ -37,6 +38,10 @@ const WorkDetail = () => {
     const slug = params.slug as string;
     const project = getProjectBySlug(slug);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
+
     // Find next project for navigation
     const currentIndex = projects.findIndex(p => p.slug === slug);
     const nextProject = projects[(currentIndex + 1) % projects.length];
@@ -50,7 +55,7 @@ const WorkDetail = () => {
     }
 
     return (
-        <LenisDiv>
+        <LenisDiv key={slug}>
             <section className="min-h-screen pt-32 pb-20 bg-[#1a1a1a] relative overflow-hidden">
                 <div className="container mx-auto px-6 md:px-12">
 
@@ -106,12 +111,18 @@ const WorkDetail = () => {
                                         {project.description}
                                     </motion.p>
                                 </div>
-                                <div className="max-w-2xl">
+                                <div className="max-w-2xl space-y-6">
+                                    <motion.span
+                                        variants={fadeUpVariants}
+                                        className="text-[10px] uppercase tracking-[0.4em] text-white/20 font-heading block"
+                                    >
+                                        Role.
+                                    </motion.span>
                                     <motion.p
                                         variants={fadeUpVariants}
                                         className="text-white/40 font-sans text-base md:text-lg leading-relaxed"
                                     >
-                                        {project.fullDescription}
+                                        {project.myRole}
                                     </motion.p>
                                 </div>
                             </motion.div>

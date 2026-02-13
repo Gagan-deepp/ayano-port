@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import Analytics from "@/components/Analytics/google-analytics";
+import { Toaster } from "@/components/ui/sonner";
 
 // Primary font - Clean, modern, slightly warm
 const outfit = Outfit({
@@ -47,6 +48,7 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col">{children}</main>
           <Footer />
         </div>
+        <Toaster richColors position="top-center" />
       </body>
 
       <Analytics />

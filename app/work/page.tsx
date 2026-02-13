@@ -9,10 +9,10 @@ const WorkPage = () => {
     return (
         <LenisDiv>
             <section className="min-h-screen pt-32 pb-20 bg-[#1a1a1a] relative overflow-hidden">
-                <div className="container mx-auto px-6 md:px-12">
+                <div className="container mx-auto">
 
                     {/* Header Section */}
-                    <div className="mb-24 md:mb-32">
+                    <div className="mb-24 md:mb-32 px-6 md:px-12">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ const WorkPage = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8, delay: idx * 0.1 }}
                                     viewport={{ once: true, margin: "-10%" }}
-                                    className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-16 md:py-20 border-b border-white/10 hover:bg-white/[0.02] transition-colors duration-500 cursor-pointer"
+                                    className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 py-16 md:py-20 border-b border-white/10 px-6 md:px-12 hover:bg-white/2 transition-colors duration-500 cursor-pointer"
                                 >
                                     {/* Left: Title - Big & Bold */}
                                     <div className="md:col-span-4 flex flex-col justify-between h-full">

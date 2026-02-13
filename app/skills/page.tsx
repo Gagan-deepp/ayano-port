@@ -226,7 +226,7 @@ const SkillsPage = () => {
                                 className="mt-4 flex items-center gap-6 text-white/20"
                             >
                                 <div className="w-12 h-px bg-white/10" />
-                                <span className="font-serif italic text-lg opacity-50">✦ Always evolving.</span>
+                                <span className="font-serif italic text-lg opacity-70">✦ Always evolving.</span>
                             </motion.div>
                         </motion.div>
                     </div>

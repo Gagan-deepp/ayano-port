@@ -1,31 +1,44 @@
-"use client"
+"use client";
 
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
-const LenisDiv = ({ children }: Readonly<{
-    children: React.ReactNode;
-}>) => {
+const LenisDiv = ({ children }: { children: React.ReactNode }) => {
+    const lenisRef = useRef<Lenis | null>(null);
+    const rafRef = useRef<number | null>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         const lenis = new Lenis({
             lerp: 0.05,
         });
 
-        // Use requestAnimationFrame to continuously update the scroll
-        function raf(time: any) {
+        lenisRef.current = lenis;
+
+        const raf = (time: number) => {
             lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-    }, [])
+            rafRef.current = requestAnimationFrame(raf);
+        };
 
+        rafRef.current = requestAnimationFrame(raf);
 
-    return (
-        <>
-            {children}
-        </>
-    )
-}
+        return () => {
+            if (rafRef.current) cancelAnimationFrame(rafRef.current);
+            lenis.destroy();
+            lenisRef.current = null;
+        };
+    }, []);
 
-export default LenisDiv
+    useEffect(() => {
+        if (!lenisRef.current) return;
+        lenisRef.current.scrollTo(0, {
+            immediate: true,
+            force: true,
+        });
+    }, [pathname]);
+
+    return <>{children}</>;
+};
+
+export default LenisDiv;
