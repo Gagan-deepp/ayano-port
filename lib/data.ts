@@ -9,6 +9,7 @@ export interface Project {
     realm: string;
     essence: string;
     images: string[];
+    cover: string;
     github: string;
     live: string;
     year: string;
@@ -31,6 +32,7 @@ export const projects: Project[] = [
             "/works/pankhuri/mock_phonee.png",
             "/works/pankhuri/mock_2.svg",
         ],
+        cover: "/cover/pankhuri_cover.svg",
         github: "https://github.com/Panthar-InfoHub/Pankhuri-web",
         live: "https://pankhuri.co",
     },
@@ -50,6 +52,7 @@ export const projects: Project[] = [
             "/works/learn_space/mock_2.svg",
             "/works/learn_space/mock_3.svg",
         ],
+        cover: "/cover/learn_space.svg",
         github: "https://github.com/Gagan-deepp/Learn-Space",
         live: "https://learn-space-chi.vercel.app/",
     },
@@ -69,6 +72,7 @@ export const projects: Project[] = [
             "/works/pankhuri/mock_phonee.png",
             "/works/pankhuri/mock_2.svg",
         ],
+        cover: "/cover/kavach_cover.svg",
         github: "#",
         live: "https://www.surakshakawach.co.in/",
     },
@@ -84,10 +88,11 @@ export const projects: Project[] = [
         realm: "Enterprise / FinTech",
         essence: "Logic. Performance. Resilience — translating scale into technical stability.",
         images: [
-            "/works/pankhuri/mock_1.svg",
-            "/works/pankhuri/mock_phonee.png",
-            "/works/pankhuri/mock_2.svg",
+            "/works/rynox/mock_1.svg",
+            "/works/rynox/mock_2.svg",
+            "/works/rynox/mock_3.svg",
         ],
+        cover: "/cover/rynox_cover.svg",
         github: "#",
         live: "https://rynox.io/",
     },
@@ -107,6 +112,7 @@ export const projects: Project[] = [
             "/works/portfolio_v1/mock_phonee.png",
             "/works/portfolio_v1/mock_2.svg"
         ],
+        cover: "/cover/port_cover.svg",
         github: "https://github.com/Gagan-deepp/newPortfolio",
         live: "https://ayano-nu.vercel.app/",
     },

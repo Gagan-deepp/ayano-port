@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import LenisDiv from "@/components/LenisDiv";
 import { Project } from "@/lib/data";
+import Image from "next/image";
 
 interface WorkContentProps {
     projects: Project[];
@@ -67,10 +68,10 @@ const WorkContent = ({ projects }: WorkContentProps) => {
                                     </div>
 
                                     {/* Center: Image Placeholder */}
-                                    <div className="md:col-span-4 relative aspect-4/3 w-full overflow-hidden bg-white/5 border border-white/5">
+                                    <div className="md:col-span-4 relative aspect-video w-full overflow-hidden bg-white/5 border border-white/5">
                                         <div className="absolute inset-0 bg-linear-to-br from-white/5 to-white/10 group-hover:scale-105 transition-transform duration-700 ease-out" />
                                         <div className="absolute inset-0 flex items-center justify-center text-white/20 font-heading text-sm tracking-widest uppercase">
-                                            {project.name} View
+                                            <Image src={project.cover} alt={project.name} width={500} height={500} className="h-full w-full object-cover grayscale-25" />
                                         </div>
                                     </div>
 
@@ -90,7 +91,7 @@ const WorkContent = ({ projects }: WorkContentProps) => {
 
                                         <div className="mt-8 md:mt-0 flex gap-4 items-end md:items-center justify-end md:justify-start">
                                             <div className="inline-flex items-center gap-2 text-white/80 group-hover:text-white transition-colors text-sm font-heading tracking-widest uppercase group-hover:translate-x-2 duration-300">
-                                                Case Study
+                                                Know More
                                                 <span className="text-lg">↗</span>
                                             </div>
                                         </div>

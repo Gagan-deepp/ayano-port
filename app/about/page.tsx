@@ -276,7 +276,7 @@ const AboutPage = () => {
                                             transition={{ duration: 1.5, ease: "circOut" }}
                                             className="h-px w-full bg-white/10 origin-left"
                                         />
-                                        <div className="mt-4 flex justify-between text-[10px] uppercase tracking-[0.4em] text-white/20 font-heading">
+                                        <div className="mt-4 flex justify-between text-[10px] uppercase tracking-[0.4em] text-white/40 font-heading">
                                             <span>Backend Systems</span>
                                             <span>Cloud & ML</span>
                                         </div>

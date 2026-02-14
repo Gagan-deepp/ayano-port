@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
     label: "Home",
     href: "/",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M3 10.5L12 3l9 7.5" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M5 9v10a1 1 0 001 1h12a1 1 0 001-1V9" strokeLinecap="round" />
         <circle cx="12" cy="14" r="2" strokeWidth={0.5} />
@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
     label: "Works",
     href: "/work",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <rect x="3" y="3" width="7" height="7" rx="1" />
         <rect x="14" y="3" width="7" height="7" rx="1" />
         <rect x="3" y="14" width="7" height="7" rx="1" />
@@ -42,7 +42,7 @@ const navItems: NavItem[] = [
     label: "About",
     href: "/about",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <circle cx="12" cy="7" r="4" />
         <path d="M5.5 21a6.5 6.5 0 0113 0" strokeLinecap="round" />
       </svg>
@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
     label: "Skills",
     href: "/skills",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M12 2v4m0 12v4m10-10h-4M6 12H2" strokeLinecap="round" />
         <path d="M17.5 6.5l-2.8 2.8m-5.4 5.4l-2.8 2.8m0-11l2.8 2.8m5.4 5.4l2.8 2.8" strokeLinecap="round" />
         <circle cx="12" cy="12" r="2" strokeWidth={0.5} />
@@ -65,7 +65,7 @@ const navItems: NavItem[] = [
     label: "Journey",
     href: "/journey",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <path d="M4 4c4 0 4 8 8 8s4-8 8-8" strokeLinecap="round" />
         <path d="M4 12c4 0 4 8 8 8s4-8 8-8" strokeLinecap="round" />
         <circle cx="4" cy="4" r="1.5" fill="currentColor" opacity="0.3" />
@@ -78,7 +78,7 @@ const navItems: NavItem[] = [
     label: "Contact",
     href: "/contact",
     icon: (
-      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
+      <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={0.75}>
         <rect x="3" y="5" width="18" height="14" rx="2" />
         <path d="M3 7l9 6 9-6" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M12 18l-2-2 2-2 2 2-2 2z" fill="currentColor" opacity="0.2" />
@@ -336,15 +336,15 @@ export function Navigation() {
 
                     {/* Label */}
                     <span
-                      className="text-sm md:text-base font-medium tracking-wider text-white/60 group-hover:text-white transition-colors duration-500 font-heading"
+                      className="text-sm md:text-base font-medium tracking-wider text-white/80 group-hover:text-white transition-colors duration-500 font-heading"
                       style={{ transform: "translateZ(15px)" }}
                     >
                       {item.label}
                     </span>
 
-                    {/* Japanese description */}
+                    {/* Korean description */}
                     <span
-                      className="text-[10px] md:text-xs text-white/15 group-hover:text-white/50 transition-colors duration-500 tracking-widest font-serif"
+                      className="text-[10px] md:text-xs text-white/25 group-hover:text-white/50 transition-colors duration-500 tracking-widest font-serif"
                       style={{ transform: "translateZ(10px)" }}
                     >
                       {item.description}
