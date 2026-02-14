@@ -29,8 +29,31 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Ayano | Developer & Designer",
-  description: "Creative developer crafting digital experiences",
+  metadataBase: new URL("https://ayano.port"), // Replace with actual domain when ready
+  title: {
+    default: "Ayano | Developer & Designer",
+    template: "%s | Ayano",
+  },
+  description: "A digital archive focusing on architectural logic and the hidden integrity of systems.",
+  keywords: ["DevOps", "Architecture", "Systems", "Minimalist Design", "Invisible Integrity"],
+  authors: [{ name: "Ayano" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://ayano.port",
+    title: "Ayano | Developer & Designer",
+    description: "A digital archive focusing on architectural logic and systems.",
+    siteName: "Ayano",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ayano | Developer & Designer",
+    description: "A digital archive focusing on architectural logic.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

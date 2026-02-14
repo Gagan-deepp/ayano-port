@@ -118,7 +118,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 selection:bg-[#1a1a1a] selection:text-[#f5f5f5];
+    @apply border-border outline-ring/50 selection:bg-[#f5f5f5] selection:text-[#1a1a1a];
     -ms-overflow-style: none;
     scrollbar-width: none;
   }

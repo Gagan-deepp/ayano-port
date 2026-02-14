@@ -31,19 +31,19 @@ const fadeUpVariants: Variants = {
 
 const experiences = [
     {
-        role: "Website Designer",
+        role: "Full Stack Engineer",
+        company: "Panthar Infohub",
+        period: "2025 — Present"
+    },
+    {
+        role: "Bachelor of Technology",
+        company: "CSE",
+        period: "2021 — 2025"
+    },
+    {
+        role: "Backend Engineer",
         company: "Freelance",
-        period: "2022 — Present"
-    },
-    {
-        role: "UI/UX Design Intern",
-        company: "Jaren Design Studio",
-        period: "2022"
-    },
-    {
-        role: "Content Marketing Strategist",
-        company: "Markeu Collection",
-        period: "2021 — 2022"
+        period: "2023 — 2024"
     }
 ];
 
@@ -51,7 +51,7 @@ const philosophies = [
     {
         id: "01",
         title: "Intentionality",
-        desc: "Every pixel must serve a purpose. Design is the bridge between functionality and emotion."
+        desc: "Every line of code exists for a reason. Real beauty comes from technical precision, not decoration."
     },
     {
         id: "02",
@@ -60,8 +60,8 @@ const philosophies = [
     },
     {
         id: "03",
-        title: "Humanity",
-        desc: "Websites are for people, not browsers. I build digital spaces that feel alive and responsive."
+        title: "Clarity",
+        desc: "Systems should be self-evident. Complexity is a debt; clarity is the ultimate investment."
     }
 ];
 
@@ -114,7 +114,7 @@ const AboutPage = () => {
                                 </div>
                             </div>
 
-                            {/* Right: Bio & Experience (CENTRED vertically/horizontally) */}
+                            {/* Right: Bio & Experience */}
                             <div className="lg:col-span-6 flex flex-col justify-center space-y-20 lg:text-left">
 
                                 {/* Bio Content */}
@@ -127,7 +127,7 @@ const AboutPage = () => {
                                     >
                                         <div className="overflow-hidden">
                                             <motion.h2 variants={revealVariants} className="text-3xl md:text-4xl font-heading font-medium text-white/90 leading-tight">
-                                                Hi, I'm a website designer with a passion for creative & digital experiences.
+                                                Full stack engineering, focused on the architectural integrity of systems.
                                             </motion.h2>
                                         </div>
 
@@ -139,7 +139,7 @@ const AboutPage = () => {
                                                     variants={fadeUpVariants}
                                                     className="text-white/40 font-sans text-base md:text-lg leading-relaxed max-w-xl"
                                                 >
-                                                    I studied at Luxemburg University, where I discovered how strategy, design, and user behavior converge to create meaningful impact.
+                                                    2025 CSE graduate. While my focus usually rests on the hidden integrity of Backend logic and Cloud scaling, I occasionally wander into frontend design, this portfolio being one of those deliberate detours.
                                                 </motion.p>
                                             </div>
                                             <div className="overflow-hidden">
@@ -149,7 +149,7 @@ const AboutPage = () => {
                                                     variants={fadeUpVariants}
                                                     className="text-white/40 font-sans text-base md:text-lg leading-relaxed max-w-xl"
                                                 >
-                                                    Over the years, I've worked on various projects—from personal portfolios to business websites—combining strong visual storytelling with usability.
+                                                    Currently building at Panthar Infohub. I prefer systems that are robust enough to be forgotten—where the complexity is hidden behind a calm, reliable interface.
                                                 </motion.p>
                                             </div>
                                         </div>
@@ -166,7 +166,7 @@ const AboutPage = () => {
                                         viewport={{ once: true }}
                                         className="text-white/20 font-heading text-xs uppercase tracking-[0.3em] block"
                                     >
-                                        Experiences
+                                        Journey
                                     </motion.span>
 
                                     <div className="space-y-10">
@@ -235,7 +235,7 @@ const AboutPage = () => {
                         </div>
                     </div>
 
-                    {/* Creative Direction Section - Editorial Text + Image */}
+                    {/* Architectural Depth Section - Editorial Text + Image */}
                     <div className="mt-40 md:mt-60 border-t border-white/10 pt-24">
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
@@ -247,7 +247,7 @@ const AboutPage = () => {
                                     className="space-y-6"
                                 >
                                     <h2 className="text-5xl md:text-7xl font-heading font-bold text-white/90 uppercase tracking-tighter leading-tight">
-                                        Creative <br /> <span className="text-white/20 italic font-serif font-light">Direction</span>
+                                        Depth of <br /> <span className="text-white/20 italic font-serif font-light">Planning</span>
                                     </h2>
                                     <div className="h-px w-24 bg-white/10" />
                                 </motion.div>
@@ -258,7 +258,7 @@ const AboutPage = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 1 }}
                                     >
-                                        I don't just design interfaces; I direct digital narratives. My approach focuses on the intersection of brand story and technical performance.
+                                        Planning is the core of my process. Before the first line of code, I dive into the 'why'—mapping architectures that don't just solve immediate problems, but scale and persist.
                                     </motion.p>
 
                                     <motion.p
@@ -266,7 +266,7 @@ const AboutPage = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 1, delay: 0.2 }}
                                     >
-                                        Whether it's a minimal portfolio or a complex platform, I aim to create a feeling of effortless motion and silent power—where every interaction feels heavy with meaning yet light in execution.
+                                        I bring my absolute focus to every project's foundation. I don't aim for simple completion; I aim for a degree of technical craft where every interaction feels intentional and balanced.
                                     </motion.p>
 
                                     <div className="pt-8">
@@ -277,8 +277,8 @@ const AboutPage = () => {
                                             className="h-px w-full bg-white/10 origin-left"
                                         />
                                         <div className="mt-4 flex justify-between text-[10px] uppercase tracking-[0.4em] text-white/20 font-heading">
-                                            <span>Visual Systems</span>
-                                            <span>Digital Craft</span>
+                                            <span>Backend Systems</span>
+                                            <span>Cloud & ML</span>
                                         </div>
                                     </div>
                                 </div>

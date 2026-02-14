@@ -9,8 +9,8 @@ const projects = [
         slug: "pankhuri",
         index: "01",
         description: "Pankhuri is a women-centric social commerce platform that empowers resellers to build their own online businesses.",
-        github: "#",
-        live: "#",
+        github: "https://github.com/Panthar-InfoHub/Pankhuri-web",
+        live: "https://pankhuri.co",
     },
     {
         name: "Learn Space",
@@ -18,27 +18,27 @@ const projects = [
         type: "Next.js + GenAI",
         index: "02",
         description: "Learn Space is revolutionizing education through AI-powered personalization and community collaboration.",
-        github: "#",
-        live: "https://learn-space-chi.vercel.app/",
+        github: "https://github.com/Gagan-deepp/Learn-Space",
+        live: "https://learn-space-chi.vercel.app",
+    },
+    {
+        name: "Suraksha Kawach",
+        slug: "suraksha-kawach",
+        type: "Next.js + GCP + Docker + Express + Python",
+        index: "03",
+        description: "An AI-enhanced SOS safety ecosystem that captures and analyzes environmental data in real-time.",
+        github: "https://github.com/Gagan-deepp/Suraksha-Kawach",
+        live: "https://www.surakshakawach.co.in",
     },
     {
         name: "Portfolio V1",
         slug: "portfolio-v1",
         type: "React + Framer Motion",
-        index: "03",
+        index: "04",
         description: "My previous portfolio website.",
-        github: "#",
+        github: "https://github.com/Gagan-deepp/newPortfolio",
         live: "https://ayano-nu.vercel.app/",
     },
-    {
-        name: "AI SaaS",
-        slug: "ai-saas",
-        type: "Python + OpenAI",
-        index: "04",
-        description: "Generative AI platform for content creators.",
-        github: "#",
-        live: "#",
-    }
 ];
 
 const Work = () => {
@@ -94,7 +94,7 @@ const Work = () => {
                                 boxShadow: "0 20px 40px -10px rgba(0,0,0,0.3)",
                                 transition: { duration: 0.3, ease: "easeOut" }
                             }}
-                            className="group relative flex flex-col md:flex-row md:items-center justify-between py-12 md:px-8 border-b border-white/10 hover:border-transparent transition-all duration-500 cursor-pointer"
+                            className="group relative flex flex-col md:flex-row md:items-center justify-between py-12 px-8 border-b border-white/10 hover:border-transparent transition-all duration-500 cursor-pointer"
                         >
                             {/* Left: Index & Name */}
                             <div className="flex items-baseline gap-6 md:gap-12 relative z-10 transition-transform duration-500 group-hover:translate-x-2">

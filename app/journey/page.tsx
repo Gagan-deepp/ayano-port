@@ -39,13 +39,13 @@ const stages = [
         title: "Professional",
         subtitle: "The Craft",
         period: "2025 - Present",
-        description: "Working at the intersection of aesthetic engineering and robust systems. Building digital products that feel as good as they look.",
+        description: "Operating at the intersection of architectural logic and aesthetic systems focusing on the robustness beneath the surface.",
         image: "/journey/office.png",
         color: "bg-[#1f1f1f]",
         details: [
-            "Full-stack Application Architecture",
-            "Advanced UI/UX Implementation",
-            "Infrastructure & DevOps Management"
+            "Full-stack System Architecture",
+            "DevOps & Infrastructure Resilience",
+            "Strategic Automation Planning"
         ]
     }
 ];
@@ -92,7 +92,7 @@ const Journey = () => {
                                                 initial={{ opacity: 0 }}
                                                 animate={{ opacity: 1 }}
                                                 exit={{ opacity: 0 }}
-                                                className="absolute inset-0 flex flex-col items-center justify-between py-10 px-6"
+                                                className="absolute inset-0 flex flex-row md:flex-col items-center justify-between px-6 py-6 md:py-10 md:px-6"
                                             >
                                                 {/* Top: Large Arrow Circle */}
                                                 <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm group-hover:bg-white/10 transition-colors">
@@ -103,7 +103,7 @@ const Journey = () => {
 
                                                 {/* Center: Vertical Title */}
                                                 <div className="flex-1 flex items-center justify-center">
-                                                    <span className="text-white/40 font-heading font-medium text-sm lg:text-base uppercase tracking-[0.4em] -rotate-180 [writing-mode:vertical-lr] whitespace-nowrap">
+                                                    <span className="text-white/40 font-heading font-medium text-sm lg:text-base uppercase tracking-[0.4em] md:-rotate-180 md:[writing-mode:vertical-lr] whitespace-nowrap">
                                                         {stage.title}
                                                     </span>
                                                 </div>
