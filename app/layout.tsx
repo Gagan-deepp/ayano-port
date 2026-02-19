@@ -29,7 +29,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ayano.port"), // Replace with actual domain when ready
+  metadataBase: new URL("https://ayanoo.vercel.app"),
   title: {
     default: "Ayano | Developer & Designer",
     template: "%s | Ayano",
@@ -40,15 +40,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ayano.port",
+    url: "https://ayanoo.vercel.app",
     title: "Ayano | Developer & Designer",
     description: "A digital archive focusing on architectural logic and systems.",
     siteName: "Ayano",
+    images: [
+      {
+        url: "/og.svg",
+        width: 1200,
+        height: 630,
+        alt: "Ayano | Architecture & Systems",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ayano | Developer & Designer",
-    description: "A digital archive focusing on architectural logic.",
+    description: "A digital archive focusing on architectural logic and systems.",
+    images: ["/og.svg"],
   },
   robots: {
     index: true,

@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AnimateBtn from "./AnimateBtn";
+import Link from "next/link";
 
 const projects = [
     {
@@ -169,6 +171,12 @@ const Work = () => {
                         </motion.a>
                     ))}
                 </div>
+
+
+                {/* Animate Button */}
+                <Link href="/work">
+                    <AnimateBtn />
+                </Link>
             </div>
         </section>
     )

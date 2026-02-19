@@ -47,7 +47,7 @@ const skillCategories = [
         skills: [
             "Docker / Kubernetes",
             "CI / CD Pipelines",
-            "AWS / Vercel / GCP",
+            "AWS / Azure / GCP",
             "Git / GitHub Actions",
             "Testing (Jest / Cypress)",
             "Performance Optimization"
@@ -57,7 +57,7 @@ const skillCategories = [
         id: "04",
         title: "Design & UX",
         skills: [
-            "Figma / Adobe Suite",
+            "Figma",
             "Visual Storytelling",
             "Typography & Layout",
             "Motion Design",
