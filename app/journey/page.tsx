@@ -200,7 +200,7 @@ const Journey = () => {
                         <div className="flex gap-12 font-heading text-xs tracking-[0.2em] uppercase text-white/40">
                             <div>
                                 <p className="text-white/20 mb-2">Curated</p>
-                                <p>2010 — 2026</p>
+                                <p>2019 — 2026</p>
                             </div>
                             <div>
                                 <p className="text-white/20 mb-2">Focus</p>

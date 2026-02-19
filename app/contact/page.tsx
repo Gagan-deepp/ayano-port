@@ -351,13 +351,26 @@ const Contact = () => {
                             </div>
                             <div className="mt-6 flex gap-6 overflow-hidden">
                                 <motion.div variants={revealVariants} className="flex gap-6">
-                                    {["Twitter", "GitHub", "LinkedIn", "Discord"].map((social) => (
+                                    {[{
+                                        label: "Twitter",
+                                        link: "https://x.com/ayano_71"
+                                    }, {
+                                        label: "GitHub",
+                                        link: "https://github.com/gagan-deepp"
+                                    }, {
+                                        label: "LinkedIn",
+                                        link: "https://www.linkedin.com/in/gagan-deep-singh-666158238"
+                                    }, {
+                                        label: "Discord",
+                                        link: "https://discord.com/users/759284811239784468"
+                                    }].map((social) => (
                                         <Link
-                                            key={social}
-                                            href="#"
+                                            key={social.label}
+                                            href={social.link}
+                                            target="_blank"
                                             className="text-white/40 hover:text-white text-xs font-heading tracking-widest uppercase transition-colors duration-300"
                                         >
-                                            {social}
+                                            {social.label}
                                         </Link>
                                     ))}
                                 </motion.div>
