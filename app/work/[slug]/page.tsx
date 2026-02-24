@@ -21,7 +21,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         openGraph: {
             title: project.name,
             description: project.description,
-            images: [project.images[0]],
         },
     };
 }

@@ -44,20 +44,11 @@ export const metadata: Metadata = {
     title: "Ayano | Developer & Designer",
     description: "A digital archive focusing on architectural logic and systems.",
     siteName: "Ayano",
-    images: [
-      {
-        url: "/og.svg",
-        width: 1200,
-        height: 630,
-        alt: "Ayano | Architecture & Systems",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ayano | Developer & Designer",
     description: "A digital archive focusing on architectural logic and systems.",
-    images: ["/og.svg"],
   },
   robots: {
     index: true,
