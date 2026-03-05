@@ -162,28 +162,34 @@ const ProjectContent = ({ project, nextProject }: ProjectContentProps) => {
                     {/* 4. Asymmetrical Editorial Gallery */}
                     <div className="space-y-8">
                         {/* First Image - Full Width (Cinematic) */}
-                        {project.images[0] && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
-                                viewport={{ once: true, margin: "-10%" }}
-                                className="relative aspect-video rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
-                            >
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.2, ease: [0.33, 1, 0.68, 1] }}
+                            viewport={{ once: true, margin: "-10%" }}
+                            className="relative aspect-video rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
+                        >
+                            {project.images.length > 0 ? (
                                 <Image
                                     src={project.images[0]}
                                     alt={`${project.name} main preview`}
                                     fill
                                     className="object-cover grayscale opacity-60 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
                                 />
-                                <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/20 to-transparent pointer-events-none" />
-                            </motion.div>
-                        )}
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <span className="text-[10px] md:text-sm uppercase tracking-[0.4em] text-white/20 font-heading italic">
+                                        Visual Archive Coming Soon
+                                    </span>
+                                </div>
+                            )}
+                            <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/20 to-transparent pointer-events-none" />
+                        </motion.div>
 
                         {/* Second & Third Images - Side by Side (Square) */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {project.images.slice(1, 3).map((img, idx) => (
-                                <motion.div 
+                                <motion.div
                                     key={idx}
                                     initial={{ opacity: 0, y: 40 }}
                                     whileInView={{ opacity: 1, y: 0 }}
@@ -192,9 +198,9 @@ const ProjectContent = ({ project, nextProject }: ProjectContentProps) => {
                                     className="relative aspect-square rounded-3xl overflow-hidden bg-white/5 group border border-white/5"
                                 >
                                     <Image
-                                        src={img} 
+                                        src={img}
                                         alt={`${project.name} detail ${idx + 1}`}
-                                        fill 
+                                        fill
                                         className="object-cover grayscale opacity-60 transition-all duration-1000 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-[1.02]"
                                     />
                                     <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a]/20 to-transparent pointer-events-none" />
